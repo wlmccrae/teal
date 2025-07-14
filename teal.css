@@ -1,0 +1,40 @@
+body {
+  background-color: #000000;
+  padding: 0 10px;
+  font-family: "Cormorant", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: 13px;
+  font-style:normal;
+  color: #cc5500;
+}
+
+a {
+  text-decoration: none;
+  color: #2596be;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-opening {
+  font-family: "Karla", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #bea925;
+  text-align: left;
+  padding: 0 10px 10px;
+}
+
+.about-text {
+  text-align: left;
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
