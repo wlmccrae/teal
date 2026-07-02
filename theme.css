@@ -29,6 +29,7 @@
   --body-text: 'DM Sans', sans-serif;
   --large-heading: 'DM Serif', serif;
   --elegant-heading: 'Cormorant', serif;
-  --body-text-size: 13px;
-  --menu-text-size: 12px;
+  --body-text-sm: 12px;
+  --menu-text-sm: 11px;
+  --footer-text-sm: 11px;
 }
