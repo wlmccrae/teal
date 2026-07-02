@@ -30,8 +30,15 @@
   --large-heading: 'DM Serif', serif;
   --elegant-heading: 'Cormorant', serif;
   --body-text-sm: 12px;
+  --body-text-md: 16px;
   --menu-text-sm: 11px;
+  --menu-text-md: 15px;
   --footer-text-sm: 11px;
+  --footer-text-md: 15px;
   --header-sm: 18px;
+  --header-md: 24px;
+  --intro-text-sm: 14px;
+  --intro-text-md: 20px;
   --subheader-sm: 16px;
+  --subheader-md: 22px;
 }
