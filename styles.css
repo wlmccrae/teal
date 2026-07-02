@@ -112,17 +112,15 @@ h2 {
   gap: 5px;
   background-color: var(--alt-section-bg);
   margin-top: 5px;
+  padding-top: 10px;
   border-radius: 10px;
 }
 
-.about-opening {
-  margin: 10px 0;
-  padding: 10px 10px;
-  font-family: var(--large-heading);
-  font-size: 16px;
-  font-weight: 500;
+.about-header {
+  margin-bottom: 5px;
   color: var(--headings-links);
-  text-align: center;
+  font-size: var(--subheader-sm);
+  font-weight: 500;
 }
 
 .about-text {
