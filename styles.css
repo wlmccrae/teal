@@ -46,7 +46,6 @@ h2 {
 }
 
 /* Navigation */
-
 .nav-container {
   background-color: var(--headings-links);
   display: flex;
@@ -79,13 +78,12 @@ h2 {
 }
 
 /* Intro */
-
 .intro-container {
   margin-top: 5px;
 }
 
 .intro {
-  margin: 10px 0;
+  margin: px 0;
   padding: 10px 10px;
   background-color: var(--alt-section-bg);
   border-radius: 10px;
@@ -96,8 +94,18 @@ h2 {
   text-align: left;
 }
 
-/* About */
+/* Carousel */
+#workCarousel {
+  max-height: 300px;
+  overflow: hidden;
+}
 
+#workCarousel img {
+  height: 275px;
+  object-fit: scale-down;
+}
+
+/* About */
 .about-container {
   display: flex;
   flex-direction: column;
@@ -140,14 +148,15 @@ h2 {
 }
 
 /* Footer */
-
 footer {
   margin-top: 5px;
   padding: 5px 0;
+  border-top: 1px solid var(--default-border);
   font-size: var(--footer-text-sm);
   text-align: right;
 }
 
 footer a {
   font-weight: 400;
+  color: var(--primary-text);
 }
