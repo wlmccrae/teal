@@ -183,6 +183,11 @@ h2 {
   border-radius: 10px;
 }
 
+/* Contact */
+.contact-subheader {
+  text-align: left;
+}
+
 /* Footer */
 footer {
   margin-top: 5px;
