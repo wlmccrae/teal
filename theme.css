@@ -31,14 +31,19 @@
   --elegant-heading: 'Cormorant', serif;
   --body-text-sm: 12px;
   --body-text-md: 16px;
+  --body-text-lg: 20px;
   --menu-text-sm: 11px;
   --menu-text-md: 15px;
+  --menu-text-lg: 19px;
   --footer-text-sm: 11px;
   --footer-text-md: 15px;
   --header-sm: 18px;
   --header-md: 24px;
+  --header-lg: 30px;
   --intro-text-sm: 14px;
   --intro-text-md: 20px;
+  --intro-text-lg: 28px;
   --subheader-sm: 16px;
   --subheader-md: 22px;
+  --subheader-lg: 28px;
 }
