@@ -1,9 +1,8 @@
 /* Mobile-first CSS */
+/* Matches Bootstrap breakpoints for extra-small (<576px) and small (>= 576px) screens */
 
 body {
   background-color: var(--primary-pg-bg);
-  background-image: url("./assets/dslr20250927nybg0014.jpg");
-  background-size: cover;
   margin: auto;
   padding: 0;
   font-family: var(--body-text);
@@ -76,7 +75,7 @@ h2 {
   gap: 3px;
   justify-content: space-between;
   align-items: center;
-  /* max-width: none; */
+  max-width: none;
 }
 
 .site-branding {
@@ -111,10 +110,11 @@ h2 {
   background-color: var(--alt-section-bg);
   padding-bottom: 20px;
   padding-top: 10px;
+  max-width: none;
 }
 
 .intro {
-  max-width: 85%;
+  max-width: 95%;
   margin: auto;
   padding: 20px 10px;
   border-radius: 10px;
@@ -127,13 +127,12 @@ h2 {
 
 /* Carousel */
 #workCarousel {
-  max-height: 400px;
   overflow: hidden;
   margin-bottom: 15px;
+  padding: 0 10px;
 }
 
 #workCarousel img {
-  height: 375px;
   object-fit: scale-down;
 }
 
@@ -144,9 +143,9 @@ h2 {
   align-items: stretch;
   gap: 5px;
   background-color: var(--alt-section-bg);
-  margin-top: 5px;
-  padding-top: 10px;
-  border-radius: 10px;
+  margin: 0;
+  padding: 10px 30px;
+  max-width: none;
 }
 
 .service-buttons-container {
@@ -176,6 +175,7 @@ h2 {
 }
 
 .about-text {
+  padding: 15px 0;
   text-align: left;
 }
 
@@ -240,13 +240,14 @@ h2 {
 }
 
 /* Footer */
-footer {
+.footer-container {
   background-color: var(--alt-section-bg);
   margin-top: 0;
-  padding: 5px 0;
+  padding: 10px;
   border-top: 1px solid var(--default-border);
   font-size: var(--footer-text-sm);
   text-align: right;
+  max-width: none;
 }
 
 footer a {
@@ -259,10 +260,11 @@ footer a:hover {
   color: var(--headings-links);
 }
 
+/* Medium Screens - matches Bootstrap breakpoints */
+
 @media (min-width: 768px) {
   body {
     font-size: var(--body-text-md);
-    /* max-width: 1000px; */
   }
 
   h1 {
@@ -311,16 +313,6 @@ footer a:hover {
   /* Intro */
   .intro {
     font-size: var(--intro-text-md);
-    max-width: 85%;
-  }
-
-  /* Carousel */
-  #workCarousel {
-    max-height: 600px;
-  }
-
-  #workCarousel img {
-    height: 585px;
   }
 
   /* About */
@@ -355,13 +347,20 @@ footer a:hover {
   }
 
   /* Footer */
-  footer {
+  .footer-container {
     font-size: var(--footer-text-md);
   }
 }
 
-@media (min-width: 1000px) {
+/* Large Screens - matches Bootstrap breakpoint for large (>= 992px), extra-large (>= 1200px), and extra-extra-large (>= 1400px) screens. */
+
+@media (min-width: 992px) {
   body {
+    background-image: url("./assets/dslr20250927nybg0014.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    max-width: 1000px;
     font-size: var(--body-text-lg);
   }
 
@@ -381,11 +380,8 @@ footer a:hover {
     font-size: var(--intro-text-lg);
   }
 
-  #workCarousel {
-    /* max-height: 800px; */
-  }
-
-  #workCarousel img {
-    /* height: 800px; */
-  }
+  /* Footer */
+    .footer-container {
+      font-size: var(--footer-text-lg);
+    }
 }
