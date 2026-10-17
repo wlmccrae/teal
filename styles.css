@@ -239,6 +239,50 @@ h2 {
   font-weight: 400;
 }
 
+/* Image galleries */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 100rem;  /* keeps rows from stretching endlessly on huge monitors */
+  margin: 0 auto;
+}
+
+/* The <a> links are the flex items, so size them; the img fills its link */
+.gallery a {
+  display: block;
+  flex: 1 1 100%;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Every tile takes the landscape shape (photos are 1200x800); portrait
+     photos are cropped to fit, keeping the top of the image visible */
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover/keyboard focus: lift the photo slightly */
+.gallery a:hover img,
+.gallery a:focus-visible img {
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery img {
+    transition: none;
+  }
+}
+
 /* Footer */
 .footer-container {
   background-color: var(--alt-section-bg);
@@ -258,6 +302,14 @@ footer a {
 footer a:hover {
   transform: scale(1.05);
   color: var(--headings-links);
+}
+
+/* Tablets and up: there is room for two 15rem tiles (15 + 1 gap + 15 + 2 padding = 33rem),
+   so switch to fixed 15rem photos that wrap into as many columns as fit */
+@media (min-width: 34rem) {
+  .gallery a {
+    flex: 0 0 15rem;
+  }
 }
 
 /* Medium Screens - matches Bootstrap breakpoints */
@@ -362,6 +414,11 @@ footer a:hover {
     background-repeat: no-repeat;
     max-width: 1000px;
     font-size: var(--body-text-lg);
+  }
+
+  /* Gallery pages get more room for photos than the 1000px text pages */
+  body.gallery-page {
+    max-width: 80vw;
   }
 
   h1 {
