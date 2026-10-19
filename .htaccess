@@ -1,0 +1,11 @@
+# Disable directory listings site-wide
+Options -Indexes
+
+# Permanent redirects for pages moved into galleries/
+Redirect 301 /galleries.html /galleries/
+Redirect 301 /awb20260613.html /galleries/awb20260613.html
+Redirect 301 /copskids20260817.html /galleries/copskids20260817.html
+Redirect 301 /ubiquitysoul20261003.html /galleries/ubiquitysoul20261003.html
+
+# Old gallery photo folders
+RedirectMatch 301 ^/assets/(awb20260613|copskids20260817|ubiquitysoul-20261003)/(.*)$ /galleries/assets/$1/$2
