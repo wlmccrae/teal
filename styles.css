@@ -24,8 +24,19 @@ body {
   font-size: 14px;
 }
 
+/* Bring the skip link on screen when it receives keyboard focus */
+.skip-link:focus {
+  top: 0;
+}
+
 a {
   text-decoration: none;
+}
+
+/* Visible keyboard focus ring that matches each link's own color */
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 h1 {
@@ -35,13 +46,23 @@ h1 {
   font-size: var(--header-sm);
 }
 
+/* inline-block lets the hover scale take effect */
 h1 a {
+  display: inline-block;
+  color: var(--light-text);
+  transition: transform 0.2s ease;
+}
+
+h1 a:hover,
+h1 a:focus-visible {
+  transform: scale(1.05);
   color: var(--light-text);
 }
 
-h1 a:hover {
-  transform: scale(1.05);
-  color: var(--hover-highlight);
+@media (prefers-reduced-motion: reduce) {
+  h1 a {
+    transition: none;
+  }
 }
 
 h2 {
@@ -92,17 +113,25 @@ h2 {
   flex-direction: column;
   gap: 3px;
   font-size: var(--menu-text-sm);
-  transition: var(--hoverhighlight) 0.2s ease transform 0.2s ease;
 }
 
+/* Vertical padding keeps each link at least 24px tall (WCAG target size) */
 .site-menu a {
-  padding: 2px;
+  padding: 6px 2px;
   color: var(--light-text);
+  transition: transform 0.2s ease;
 }
 
-.site-menu a:hover {
+@media (prefers-reduced-motion: reduce) {
+  .site-menu a {
+    transition: none;
+  }
+}
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
   transform: scale(1.05);
-  color: var(--hover-highlight);
+  color: var(--light-text);
 }
 
 /* Intro */
@@ -157,7 +186,8 @@ h2 {
 }
 
 .service-button {
-  background-color: var(--hover-highlight);
+  display: inline-block;
+  background-color: var(--primary-cta);
   padding: 5px;
   color: var(--light-text);
   border: 0;
@@ -165,13 +195,16 @@ h2 {
   transition: var(--dark-feature-bg) 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.service-button:hover {
+.service-button:hover,
+.service-button:focus-visible {
   transform: scale(1.05);
   background-color: var(--headings-links);
+  color: var(--light-text);
 }
 
-.service-button a {
-  color: var(--light-text);
+/* The button text is light, so draw the focus ring in teal to show against the page */
+.service-button:focus-visible {
+  outline-color: var(--headings-links);
 }
 
 .about-text {
@@ -184,8 +217,8 @@ h2 {
   color: var(--primary-text);
 }
 
-.about-text a:hover {
-  transform: scale(1.05);
+.about-text a:hover,
+.about-text a:focus-visible {
   color: var(--headings-links);
 }
 
@@ -229,11 +262,22 @@ h2 {
   text-align: left;
 }
 
+/* Vertical padding keeps each link at least 24px tall (WCAG target size) */
 .contact-link {
+  display: inline-block;
+  padding: 4px 0;
   color: var(--primary-text);
+  transition: transform 0.2s ease;
 }
 
-.contact-link:hover {
+@media (prefers-reduced-motion: reduce) {
+  .contact-link {
+    transition: none;
+  }
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
   transform: scale(1.05);
   color: var(--headings-links);
   font-weight: 400;
@@ -332,8 +376,9 @@ h2 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-.gallery-index a:hover h3 {
-  color: var(--hover-highlight);
+.gallery-index a:hover h3,
+.gallery-index a:focus-visible h3 {
+  color: var(--primary-cta);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -353,12 +398,22 @@ h2 {
   max-width: none;
 }
 
+/* inline-block lets the hover scale take effect */
 footer a {
+  display: inline-block;
   font-weight: 400;
   color: var(--primary-text);
+  transition: transform 0.2s ease;
 }
 
-footer a:hover {
+@media (prefers-reduced-motion: reduce) {
+  footer a {
+    transition: none;
+  }
+}
+
+footer a:hover,
+footer a:focus-visible {
   transform: scale(1.05);
   color: var(--headings-links);
 }
