@@ -1,3 +1,13 @@
+# BEGIN AI crawler block
+# Paste at the TOP of .htaccess in public_html, above "# BEGIN WordPress".
+# Returns 403 Forbidden to these user agents even if they ignore robots.txt.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (meta-externalagent|GPTBot|ClaudeBot|anthropic-ai|CCBot|MistralAI-Training|cohere-training-data-crawler|Webzio-Extended|LAIONDownloader) [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+# END AI crawler block
+
 # Disable directory listings site-wide
 Options -Indexes
 
