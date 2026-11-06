@@ -327,6 +327,50 @@ h2 {
   }
 }
 
+/* Gallery photo modals */
+
+/* Shrink the dialog to the photo's own size, up to what fits on screen */
+.photo-modal .modal-dialog {
+  width: fit-content;
+  max-width: calc(100vw - 2rem);
+  margin-inline: auto;
+}
+
+.photo-modal .modal-content {
+  background-color: var(--primary-pg-bg);
+  border: none;
+  border-radius: 0;
+}
+
+/* Native size, reduced only when the window is too small to hold it */
+.photo-modal img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 9rem);
+  max-height: calc(100dvh - 9rem);
+}
+
+/* Zero width + full min-width: the caption wraps to the photo's width
+   instead of stretching the dialog */
+.photo-modal-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 0;
+  min-width: 100%;
+  padding: 0.75rem 1rem;
+}
+
+.photo-modal-caption {
+  flex: 1;
+  margin: 0;
+  text-align: left;
+  color: var(--captions-secondary);
+  font-family: var(--body-text);
+}
+
 /* Gallery index */
 .gallery-index {
   display: flex;

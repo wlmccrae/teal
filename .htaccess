@@ -17,5 +17,9 @@ Redirect 301 /awb20260613.html /galleries/awb20260613.html
 Redirect 301 /copskids20260817.html /galleries/copskids20260817.html
 Redirect 301 /ubiquitysoul20261003.html /galleries/ubiquitysoul20261003.html
 
+# Gallery pages moved into their own folders
+Redirect 301 /galleries/nycmarathon20261101.html /galleries/nycmarathon20261101/
+
 # Old gallery photo folders
 RedirectMatch 301 ^/assets/(awb20260613|copskids20260817|ubiquitysoul-20261003)/(.*)$ /galleries/assets/$1/$2
+RedirectMatch 301 ^/galleries/assets/nycmarathon20261101/(.*)$ /galleries/nycmarathon20261101/assets/$1
